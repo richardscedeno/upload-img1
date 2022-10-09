@@ -1,5 +1,7 @@
 {
   "name": "subirImagen",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

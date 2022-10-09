@@ -1,20 +1,55 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="warning" mode="ios">
     <ion-title>
-      Blank
+      Upload Image
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content padding>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-grid>
+   <ion-row>
+      <ion-col>
+        <div></div>
+      </ion-col>
+      <ion-col >
+        <div>
+          <ion-button ion-button small icon-only outline (click)="AccessCamera()">
+            <ion-icon name="camera"> Camera</ion-icon>
+          </ion-button>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div> 
+          <ion-button ion-button small icon-only outline (click)="AccessGallery()">
+            <ion-icon name="image"> Gallery</ion-icon> 
+          </ion-button>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div></div>
+      </ion-col> 
+    </ion-row>
+
+    <img [src]="base64Image" *ngIf="base64Image" />
+
+    <ion-button ion-button full (click)="Upload()" *ngIf="base64Image">
+      <ion-icon name="cloud-upload-outline">Upload</ion-icon> 
+    </ion-button>
+ 
+  </ion-grid>
+ 
 </ion-content>
+
+<ion-footer mode="ios">
+  <!-- PIE DE PAGINA -->
+  <ion-toolbar color="warning">
+    <div>
+      <ion-title>Realizado por Cedeño Richards</ion-title><br><br>
+      <ion-label id="label">UPSE-2021</ion-label>
+    </div>
+  </ion-toolbar>
+</ion-footer>
